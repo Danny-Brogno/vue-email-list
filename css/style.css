@@ -1,3 +1,4 @@
+
 /* GENERAL RULES FOR THE WHOLE PAGE */
 
 * {
@@ -9,7 +10,7 @@
 body {
   background-color: black;
   color: white;
-  font-family: 'Dancing Script';
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -31,26 +32,40 @@ li {
   flex-direction: column;
 }
 
-/* -------------------------------------------------------------------------- */
+/* -----------------------------------MAIN----------------------------------- */
 
 .containerDanny {
   height: 100vh;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+}
 
+/* BUTTONS AND TARGETS */
+
+#target1,
+#target2 {
+  position: absolute;
+  display:flex;
+  flex-direction: column;
+}
+
+.containerDanny div:nth-child(1) {
+  align-self: center;
+  position: relative;
 }
 
 #pressBTN1 {
-  margin-right: 500px;
+  margin-right: 259px;
 }
 
 #pressBTN2 {
-  margin-left: 500px;
+  margin-left: 259px;
 }
 
-.buttons button {
+
+/* BUTTONS */
+.containerDanny div:nth-child(1) button {
   width: 200px;
   height: 50px;
   background-color: navy;
@@ -70,20 +85,11 @@ li {
   font-weight: bold;
 }
 
-.box1 {
-  float: left;
-}
-
 .box2 {
-  float: right;
+  position: relative;
+  left: 873px;
   color: blue;
   font-size: 2rem;
-}
-
-.buttons::after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 .bg-lime {
@@ -96,4 +102,34 @@ li {
 
 .bg-gold {
   background-color: gold;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* EMAILS */
+.containerDanny div:nth-child(2) {
+  line-height: 200%;
+  font-size: 20px;
+  align-self: center;
+}
+
+/* DANNY LOGO */
+.containerDanny div:nth-child(3) {
+  align-self: center;
+}
+
+.containerDanny div:nth-child(3) ul li {
+  display: inline;
+  color: #0065bd;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.containerDanny div:nth-child(3) .fa-at {
+  animation: gira-la-chiocciola 1s linear infinite;
+  color: white;
+}
+
+@keyframes gira-la-chiocciola {
+  0% {transform: rotate(1turn);}
 }
