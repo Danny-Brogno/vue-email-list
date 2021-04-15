@@ -19,7 +19,7 @@ function addClickListener1() { // FUN-----------
 function boxGenerator1() { // FUN--------------
   $.ajax({
 
-    url: "https://flynn.boolean.careers/exercises/api/random/boolean",
+    url: "https://flynn.boolean.careers/exercises/api/random/boolean", // Because this gives back a boolean value (true or false) I can generate two kinds of responses in generateBox1
     method: "GET",
     success: function(data) {
       const res = data.response;
@@ -75,10 +75,61 @@ function generateBox2(value) { // FUN------------
 
 // -----------------------------------------------------------------------------
 
+// GOAL: Attraverso l'apposita API di Boolean generare 10 indirizzi email e stamparli in pagina all'interno di una lista.
+
+function emailGenerator() {
+  $.ajax({
+
+    url: "https://flynn.boolean.careers/exercises/api/random/mail", // Because this gives back a boolean value (true or false) I can generate two kinds of responses in generateBox1
+    method: "GET",
+    success: function(data) {
+
+      let arrayDanny = [];
+      const email = data.response;
+      
+      while (email <= 10) {
+        arrayDanny.push(email);
+        email++;
+      }
+      console.log(arrayDanny, email);
+
+    },
+    error: function() {
+      console.log("error");
+    }
+  });
+} // END OF FUNCTION emailGenerator
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -----------------------------------------------------------------------------
+
 function init() { // FUN------------
 
   addClickListener1();
   addClickListener2();
+  emailGenerator();
 } // END OF FUNCTION init
 
 document.addEventListener("DOMContentLoaded", init);
