@@ -77,14 +77,12 @@ function generateBox2(value) { // FUN------------
 
 // GOAL: Attraverso l'apposita API di Boolean generare 10 indirizzi email e stamparli in pagina all'interno di una lista.
 
-function emailGenerator() {
+function emailGenerator() { // FUN------------
   $.ajax({
 
-    url: "https://flynn.boolean.careers/exercises/api/random/mail", // Because this gives back a boolean value (true or false) I can generate two kinds of responses in generateBox1
-    method: "GET",
+    url: "https://flynn.boolean.careers/exercises/api/random/mail",
     success: function(data) {
 
-      let arrayDanny = [];
       const email = data.response;
       console.log(email);
       displayEmail(email);
@@ -95,7 +93,7 @@ function emailGenerator() {
   });
 } // END OF FUNCTION emailGenerator
 
-function multiplyFuntion() {
+function multiplyFuntion() { // FUN------------
 
   for (let i = 0; i < 9; i++) {
 
@@ -104,7 +102,7 @@ function multiplyFuntion() {
 
 }
 
-function displayEmail(email) {
+function displayEmail(email) { // FUN------------
 
   let singleEmail = $("#emails");
   singleEmail.append(' <li class=""> '+ email +'</li> ');
@@ -113,6 +111,11 @@ function displayEmail(email) {
 
 // -----------------------------------------------------------------------------
 
+
+
+
+
+// -----------------------------------------------------------------------------
 function init() { // FUN------------
 
   addClickListener1();
